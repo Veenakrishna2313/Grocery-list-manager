@@ -4,7 +4,7 @@ import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-grocery',
   templateUrl: './grocery.component.html',
-  styleUrls: ['../../assets/css/bootstrap.min.css'],
+  styleUrls: ['../../assets/css/bootstrap.min.css', '../../assets/css/styles.css'],
 })
 export class GroceryComponent implements OnInit {
   
