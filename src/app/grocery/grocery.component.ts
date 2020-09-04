@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-grocery',
@@ -16,8 +17,20 @@ export class GroceryComponent implements OnInit {
   };
   tasks = [];
 
-  onClick() {
-    if (this.task.id == 0) {
+  onClick(task) {
+
+
+    for (var i = 0; i < this.tasks.length; i++) {
+      if (task.name == this.tasks[i].name) {
+        alert("Item already exits in your car!! Kindly delete it:)");
+       break;
+      }
+    
+    }
+  
+    if (this.task.id == 0 && this.task.name !=='') {
+
+
       this.tasks.push({
         id: new Date().getTime(),
         name: this.task.name,
@@ -29,19 +42,16 @@ export class GroceryComponent implements OnInit {
       name: '',
       id: 0,
     };
+  
+    
   }
 
-  onEdit(item) {
-    this.task = item;
+  onEdit(task) {
+    this.task = task;
   }
 
-  onDelete(item) {
-    for (var i = 0; i < this.tasks.length; i++) {
-      if (item.id == this.tasks[i].id) {
-        this.tasks.splice(i, 1);
-        break;
-      }
-    }
+  onDelete(task) {
+    this.tasks = this.tasks.filter(i => i.id !== task.id)
   }
 
   onStrike(item) {
