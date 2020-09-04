@@ -22,13 +22,13 @@ export class GroceryComponent implements OnInit {
 
     for (var i = 0; i < this.tasks.length; i++) {
       if (task.name == this.tasks[i].name) {
-        alert("Item already exits in your car!! Kindly delete it:)");
+        alert("OOPS!! Item already exits in your List!!");
        break;
       }
     
     }
   
-    if (this.task.id == 0 && this.task.name !=='') {
+    if (this.task.id == 0 ) {
 
 
       this.tasks.push({
