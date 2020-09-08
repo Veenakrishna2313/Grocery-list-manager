@@ -28,7 +28,7 @@ export class GroceryComponent implements OnInit {
     
     }
   
-    if (this.task.id == 0 ) {
+    if (this.task.id == 0  && task.name!='') {
 
 
       this.tasks.push({
